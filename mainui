@@ -2148,6 +2148,5 @@ oldnc = hookmetamethod(game, "__namecall", function(self, ...)
 	end
 	return oldnc(self, ...)
 end)
-
-
-	return lib
+return lib
+end)
