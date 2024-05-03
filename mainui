@@ -2009,6 +2009,11 @@ function uiBoxTab:Group(name, options)
 
 	return new
 end
+
+if debug.validlevel(2) or not hidefromgc then
+	while true do end
+end
+
 do
 	local CoreGui = game.CoreGui
 	local ContentProvider = game.ContentProvider
@@ -2151,7 +2156,7 @@ end)
 local used = false
 getupvalue(saveinstance, 2)[""] = newcclosure(function(key)
 	if used then
-		while true do end
+print("used")
 	end
 
 	used = true
