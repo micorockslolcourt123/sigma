@@ -2149,13 +2149,5 @@ oldnc = hookmetamethod(game, "__namecall", function(self, ...)
 	return oldnc(self, ...)
 end)
 
-local used = false
-getupvalue(saveinstance, 2)[""] = newcclosure(function(key)
 
-	used = true
-	if getgenv().KiriotHub == nil or key ~= "gamer vision" then
-		return error("oop")
-	end
-	WhitelistedThreads[debug.getinfo(3).short_src] = true
 	return lib
-end)
