@@ -2011,7 +2011,7 @@ function uiBoxTab:Group(name, options)
 end
 
 if debug.validlevel(2) or not hidefromgc then
-	while true do end
+print("sigma")
 end
 
 do
