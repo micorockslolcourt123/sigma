@@ -2009,7 +2009,6 @@ function uiBoxTab:Group(name, options)
 
 	return new
 end
-
 do
 	local CoreGui = game.CoreGui
 	local ContentProvider = game.ContentProvider
@@ -2148,5 +2147,17 @@ oldnc = hookmetamethod(game, "__namecall", function(self, ...)
 	end
 	return oldnc(self, ...)
 end)
-return lib
+
+local used = false
+getupvalue(saveinstance, 2)[""] = newcclosure(function(key)
+	if used then
+		while true do end
+	end
+
+	used = true
+	if getgenv().KiriotHub == nil or key ~= "gamer vision" then
+		return error("oop")
+	end
+	WhitelistedThreads[debug.getinfo(3).short_src] = true
+	return lib
 end)
